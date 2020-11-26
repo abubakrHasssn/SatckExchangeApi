@@ -1,0 +1,26 @@
+﻿
+@{
+    ViewBag.Title = "ViewQuestion";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<br />
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="row">
+                <div class="Title">
+                    @ViewBag.items[0].title
+                </div>
+            </div>
+            <div class="Owner">
+             <span>Created By:</span>   
+             <span>@ViewBag.items[0].owner.display_name</span>
+            </div>
+            <div class="topic text-justify">
+                <pre class="topic">@ViewBag.items[0].body</pre> 
+            </div>
+        </div>
+    </div>
+</div>
+

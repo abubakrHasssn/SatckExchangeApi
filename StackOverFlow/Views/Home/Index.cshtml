@@ -1,0 +1,48 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+<body>
+    <div class="container">
+
+        <div class="row">
+            <h2>StackOverFlow Questions</h2>
+        </div>
+        <button class="btn btn-success">Refresh</button>
+        <br />
+        <br />
+
+        @foreach (var item in ViewBag.items)
+        {
+            <div class="row">
+                <div class="col-md-10">
+                    <div class="row">
+                        <p class="Title"> <a href="~/Home/ViewQuestion/@item.question_id">@item.title</a></p>
+                    </div>
+                    <div class="row">
+                        <span class="side">votes: <b>@item.score  </b></span>
+                        <span class="side">answers: <b>@item.answer_count  </b></span>
+                        <span class="side">views: <b></b>@item.view_count  </span>
+                    </div>
+                    <div class="row">
+                        <div class="Tags">
+                            @foreach (var tag in item.tags)
+                            {
+                                <span class="btn btn-info">@tag</span>
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br />
+        }
+    </div>
+
+    <script>
+        $(document).ready(function () {
+            $("button").click(function () {
+                location.reload();
+            });
+        });
+    </script>
+ </body>
